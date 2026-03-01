@@ -366,7 +366,7 @@ export default function App() {
           border: "1px solid #e2e8f0", borderRadius: "14px", backgroundColor: "white",
           overflow: "visible", boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)"
         }}>
-          <div style={{ position: "relative", backgroundColor: "white", padding: "16px 12px 4px" }}>
+          <div style={{ position: "relative", backgroundColor: "white", padding: "20px 12px 4px" }}>
             <div ref={containerRef} style={{ position: "relative" }}>
               {/* Ruler area */}
               <div style={{ position: "relative", height: rulers.length > 0 ? "88px" : "40px", marginBottom: "4px" }}>
@@ -481,4 +481,5 @@ export default function App() {
     </div>
   );
 }
+
 
