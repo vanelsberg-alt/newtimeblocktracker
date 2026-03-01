@@ -250,7 +250,7 @@ export default function App() {
   const viewStartRef = useRef(19);
   viewStartRef.current = viewStart;
 
-  const containerRef = useRef(null);
+  const rulerLayerRef = useRef(null);`r`n  const dragContainerRef = useRef(null);
   const timelineRef = useRef(null);
 
   const [rulers, setRulers] = useState([
@@ -367,7 +367,7 @@ export default function App() {
           overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)"
         }}>
           <div style={{ position: "relative", backgroundColor: "white", padding: "24px 12px 4px" }}>
-            <div ref={containerRef} style={{ position: "relative" }}>
+            <div ref={dragContainerRef} style={{ position: "relative" }}>
               {/* Ruler area */}
               <div style={{ position: "relative", height: rulers.length > 0 ? "88px" : "40px", marginBottom: "4px" }}>
                 {rulers.length === 0 && (
@@ -382,7 +382,7 @@ export default function App() {
                     name={r.name}
                     left={r.left}
                     width={r.width}
-                    containerRef={containerRef}
+                    containerref={dragContainerRef}
                     viewStartRef={viewStartRef}
                     onCommit={(l, w) => commit(i, l, w)}
                     onNameChange={(n) => rename(i, n)}
@@ -481,6 +481,8 @@ export default function App() {
     </div>
   );
 }
+
+
 
 
 
