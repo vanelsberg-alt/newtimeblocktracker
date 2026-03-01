@@ -328,7 +328,7 @@ export default function App() {
 
   return (
     <div style={{
-      width: "100vw", height: "100vh", display: "flex", alignItems: "center",
+      width: "100vw", height: "100vh", display: "flex", alignItems: "flex-start",
       justifyContent: "center", backgroundColor: "#f8fafc", padding: "16px",
       fontFamily: "'DM Sans', 'Segoe UI', system-ui, sans-serif"
     }}>
@@ -364,7 +364,7 @@ export default function App() {
         {/* Main card */}
         <div style={{
           border: "1px solid #e2e8f0", borderRadius: "14px", backgroundColor: "white",
-          overflow: "hidden", boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)"
+          overflow: "visible", boxShadow: "0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04)"
         }}>
           <div style={{ position: "relative", backgroundColor: "white", padding: "16px 12px 4px" }}>
             <div ref={containerRef} style={{ position: "relative" }}>
@@ -372,7 +372,7 @@ export default function App() {
               <div style={{ position: "relative", height: rulers.length > 0 ? "88px" : "40px", marginBottom: "4px" }}>
                 {rulers.length === 0 && (
                   <div style={{
-                    display: "flex", alignItems: "center", justifyContent: "center",
+                    display: "flex", alignItems: "flex-start", justifyContent: "center",
                     height: "100%", color: "#cbd5e1", fontSize: "13px", fontWeight: 500
                   }}>Add a block to get started</div>
                 )}
@@ -397,7 +397,7 @@ export default function App() {
               {/* Timeline */}
               <div ref={timelineRef}
                 style={{
-                  position: "relative", overflow: "hidden", userSelect: "none",
+                  position: "relative", overflow: "visible", userSelect: "none",
                   height: "44px", backgroundColor: "#f8fafc",
                   borderTop: "1px solid #f1f5f9", margin: "0 -12px", cursor: "grab"
                 }}
@@ -423,7 +423,7 @@ export default function App() {
                   return (
                     <div key={i} style={{
                       position: "absolute", display: "flex", flexDirection: "column",
-                      alignItems: "center", left: `${pos}%`, top: 0,
+                      alignItems: "flex-start", left: `${pos}%`, top: 0,
                       transform: "translateX(-50%)", pointerEvents: "none"
                     }}>
                       <div style={{
@@ -449,7 +449,7 @@ export default function App() {
           {/* Footer */}
           <div style={{
             borderTop: "1px solid #f1f5f9", padding: "10px 16px",
-            display: "flex", alignItems: "center", gap: "12px",
+            display: "flex", alignItems: "flex-start", gap: "12px",
             backgroundColor: "#fafbfc"
           }}>
             <span style={{
@@ -459,7 +459,7 @@ export default function App() {
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#64748b" }}>
               {Math.floor(snapS).toString().padStart(2, "0")}:00 – {Math.floor(snapE).toString().padStart(2, "0")}:00
             </span>
-            <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: "3px" }}>
+            <div style={{ marginLeft: "auto", display: "flex", alignItems: "flex-start", gap: "3px" }}>
               {Array.from({ length: 24 }).map((_, h) => (
                 <div key={h} style={{
                   width: 5, height: 5, borderRadius: "50%",
@@ -481,3 +481,4 @@ export default function App() {
     </div>
   );
 }
+
